@@ -1,0 +1,151 @@
+body {
+    background-image: url(/imgs/background.jpg);
+}
+
+.clear {
+    clear: both;
+}
+
+#content {
+    min-height: 86.6%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.jumbotron {
+    width: 86%;
+    margin: 0 auto;
+    padding: 0 5%;
+    padding-bottom: 1%;
+}
+
+#navigation {
+    display: block !important;
+}
+
+.navbar-brand h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand h1 strong img {
+    height: 36px !important;
+    margin: -9px !important;
+    width: auto !important;
+}
+
+#resume {
+    resize: none;
+}
+
+#inputCover {
+    padding-left: 45px;
+}
+
+.upload-img {
+    background-image: url(/imgs/upload-img.png);
+    background-position: center;
+    background-size: 100% 84%;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin: 7px 0 0 11px;
+}
+
+.pages {
+    width: 23%;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+.img-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.img-container-lg {
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.book-container {
+    padding: 0;
+}
+
+.searchCustomResults {
+    position: absolute;
+    float: right;
+    z-index: 999999;
+    margin-top: 0;
+    border: 3px solid #a5c603;
+    background-color: #fff;
+    box-shadow: 0 0 2px #ccc;
+    opacity: 1;
+}
+
+.searchCustomResults .ng-hide {
+    opacity: 0;
+    top: -220px;
+}
+
+.searchCustomResults:after {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    display: inline-block;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #a5c603;
+    border-left: 10px solid transparent;
+    content: '';
+}
+
+.searchCustomResults > ul {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+}
+
+.searchCustomResults > ul > li {
+    list-style: none;
+    border-bottom: 1px solid #e9e9e9;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.searchCustomResults > ul > li a {
+    line-height: 41px;
+    padding: 10px 0;
+    width: 100%;
+    color: #4d4c4c;
+    display: inline-block;
+}
+
+.searchCustomResults > ul > li a:hover {
+    color: #fff;
+}
+
+.searchCustomResults > ul > li:hover {
+    background-color: #a5c603;
+}
+
+.searchCustomResults > ul > li:last-child {
+    border: 0;
+}
+
+.btn-bookmark {
+    font-size: 30px;
+}
+
+.bookmarks {
+    font-size: 10px;
+}

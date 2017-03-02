@@ -1,0 +1,36 @@
+/* desktop 1 */
+@media (min-width: 1200px) {
+
+    .searchCustomResults {
+        width: 390px;
+    }
+
+}
+
+/* desktop 2  */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .searchCustomResults {
+        width: 323px;
+    }
+
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .searchCustomResults {
+        width: 250px;
+    }
+
+}
+
+/* phone 1 */
+@media (max-width: 767px) {
+
+    .searchCustomResults {
+        width: 95%;
+        left: 15px;
+    }
+
+}
