@@ -47,11 +47,7 @@ class User extends Model implements AuthenticatableContract,
     ];
 
     public static function edit($data) {
-        $validator = Validator::make(
-            $data,
-            self::rules('edit'),
-            self::messages('edit')
-        );
+        $validator = Validator::make($data, self::rules('edit'));
         if ($validator->fails()) {
             return [
                 'error' => [
@@ -115,40 +111,8 @@ class User extends Model implements AuthenticatableContract,
         return $rules;
     }
 
-    public static function messages($option = 'none', $key = null) {
-        $messages = [
-            'username.required' => 'username is required',
-            'username.between' => 'username is between',
-            'username.alpha_num' => 'username specia chars',
-        ];
-
-        switch ($option) {
-            case 'register':
-                $messages['password.required'] = 'pass required';
-                $messages['password.between'] = 'pass between';
-                $messages['confirm_password.required'] = 'confirm pass pls';
-                $messages['confirm_password.same'] = 'passwords does not match';
-                break;
-            case 'change-password':
-                $messages['password.required'] = 'pass required';
-                $messages['password.between'] = 'pass between';
-                $messages['new_password.required'] = 'pass required';
-                $messages['new_password.between'] = 'pass between';
-                $messages['confirm_password.required'] = 'confirm pass pls';
-                $messages['confirm_password.same'] = 'passwords does not match';
-                break;
-        }
-
-        if ($key) return $messages[$key];
-        return $messages;
-    }
-
     public static function register($data) {
-        $validator = Validator::make(
-            $data,
-            self::rules('register'),
-            self::messages('register')
-        );
+        $validator = Validator::make($data, self::rules('register'));
         if ($validator->fails()) {
             return [
                 'error' => [
@@ -171,6 +135,8 @@ class User extends Model implements AuthenticatableContract,
                 ]
             ];
         }
+
+        Auth::login($user);
 
         return [
             'error' => [
@@ -216,11 +182,7 @@ class User extends Model implements AuthenticatableContract,
                 ]
             ];
         }
-        $validator = Validator::make(
-            $data,
-            self::rules('change-password'),
-            self::messages('change-password')
-        );
+        $validator = Validator::make($data, self::rules('change-password'));
         if ($validator->fails()) {
             return [
                 'error' => [

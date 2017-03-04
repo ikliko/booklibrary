@@ -42,38 +42,10 @@ class Book extends Model {
         'remember_token'
     ];
 
-    public static function messages($isUpdate = false, $key = null) {
-        $messages = [
-            'title.required' => 'title is required',
-            'title.max' => 'title max',
-            'cover.required' => 'cover req',
-            'author.required' => 'author req',
-            'pages.required' => 'pages req',
-            'pages.integer' => 'pages int',
-            'resume.required' => 'resume req',
-            'format.required' => 'format req',
-            'format.integer' => 'format int',
-            'publish.required' => 'publish req',
-            'publish.date_format' => 'publish date',
-            'isbn.required' => 'isbn req',
-            'isbn.between' => 'isb between',
-            'user_id.required' => 'user req',
-            'user_id.exists' => 'user exist'
-        ];
-        if ($isUpdate) {
-            $messages['id.required'] = 'id is required';
-            $messages['id.exists'] = 'id isn`t exists';
-            unset($messages['cover.required']);
-        }
-        if ($key) return $messages[$key];
-        return $messages;
-    }
-
     public static function createNew($data) {
         $data['user_id'] = Auth::user()->id;
         $rules = self::rules();
-        $messages = self::rules();
-        $validator = Validator::make($data, $rules, $messages);
+        $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
             return [
                 'error' => [
@@ -157,8 +129,7 @@ class Book extends Model {
     public static function edit($data, $id) {
         $data['id'] = $id;
         $rules = self::rules(true);
-        $messages = self::rules(true);
-        $validator = Validator::make($data, $rules, $messages);
+        $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
             return [
                 'error' => [

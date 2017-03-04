@@ -3,9 +3,6 @@
     login
 @stop
 @section('body')
-
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -23,7 +20,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="logo-holder">
-                            <img src="{{asset("packages/serverfireteam/panel/img/logo.png")}}"/>
+                            <img src="{{asset(Config::get('panel.logo'))}}" style="width: 100%"/>
                         </div>
                         <form action="{!! url('panel/remind') !!}" method="POST">
                             <input type="hidden" name="_token" value="{{{ csrf_token() }}}"/>

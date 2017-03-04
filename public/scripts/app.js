@@ -5,5 +5,5 @@ var app = angular.module('booklibrary', ['ngResource'], function ($interpolatePr
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 }).constant('config', {
-    url: 'http://localhost:8000/api'
+    url: 'http://dev.booklibrary.com/api'
 });
